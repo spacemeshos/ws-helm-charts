@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "spacemesh-api.fullname" . }}
+  labels:
+    {{- include "spacemesh-api.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - name: grpc
+      port: 9092
+    - name: json-rpc
+      port: 9093
+    - name: metrics
+      port: 1010
+  selector:
+    {{- include "spacemesh-api.selectorLabels" . | nindent 4 }}

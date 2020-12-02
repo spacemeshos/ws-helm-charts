@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt
+spec:
+  acme:
+    email: valar999@gmail.com
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: issuer-account-key
+    # Add a single challenge solver, HTTP01 using nginx
+    solvers:
+    - http01:
+        ingress:
+          class: nginx

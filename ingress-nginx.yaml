@@ -1,0 +1,12 @@
+controller:
+  metrics:
+    enabled: true
+    service:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "10254"
+#  extraArgs:
+#    enable-ssl-passthrough: ""
+#  service:
+#    annotations:
+#      external-dns.alpha.kubernetes.io/hostname: kubernetes-example.com.

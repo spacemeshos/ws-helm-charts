@@ -1,0 +1,30 @@
+{{- if and .Values.ingress.enabled .Values.ingress.jsonRpcDomain -}}
+{{- $fullName := include "spacemesh-api.fullname" . -}}
+{{- $domain := .Values.ingress.jsonRpcDomain -}}
+{{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
+apiVersion: networking.k8s.io/v1beta1
+{{- else -}}
+apiVersion: extensions/v1beta1
+{{- end }}
+kind: Ingress
+metadata:
+  name: {{ $fullName }}
+  labels:
+    {{- include "spacemesh-api.labels" . | nindent 4 }}
+  annotations:
+    kubernetes.io/ingress.class: {{ .Values.ingress.controller }}
+    cert-manager.io/cluster-issuer: {{ .Values.ingress.certIssuer }}
+spec:
+  tls:
+    - hosts:
+        - {{ $domain }}
+      secretName: {{ $fullName }}
+  rules:
+    - host: {{ $domain }}
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: {{ $fullName }}
+              servicePort: 9093
+{{- end }}

@@ -1,0 +1,92 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "spacemesh-api.fullname" . }}
+  labels:
+    {{- include "spacemesh-api.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "spacemesh-api.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "spacemesh-api.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "spacemesh-api.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: node
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["/bin/go-spacemesh"]
+          args:
+            - "--config"
+            - "/etc/spacemesh/config.json"
+            - "--json-server"
+            - "--metrics"
+          ports:
+            - name: grpc
+              containerPort: 9092
+              protocol: TCP
+            - name: json-rpc
+              containerPort: 9093
+              protocol: TCP
+            - name: metrics
+              containerPort: 1010
+              protocol: TCP
+          livenessProbe:
+            tcpSocket:
+              port: 9090
+            initialDelaySeconds: 45
+            periodSeconds: 5
+            failureThreshold: 12
+          volumeMounts:
+            - name: config
+              mountPath: /etc/spacemesh
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+
+        - name: check-sync
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: blacktop/httpie
+          command: ["/bin/sleep"]
+          args:
+            - "10000000"
+          readinessProbe:
+            exec:
+              command: ["echo", "TODO, need a node that can sync"]
+            initialDelaySeconds: 45
+            periodSeconds: 30
+            failureThreshold: 1
+      volumes:
+        - name: config
+          configMap:
+            name: {{ include "spacemesh-api.fullname" . }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
