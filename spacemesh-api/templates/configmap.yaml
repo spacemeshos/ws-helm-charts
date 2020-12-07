@@ -6,4 +6,6 @@ metadata:
     {{- include "spacemesh-api.labels" . | nindent 4 }}
 data:
   config.json: |
-{{ required "configFile must be specified" .Values.configFile | .Files.Get | indent 4 }}
+{{ required "'config' must be specified" .Values.config | indent 4 }}
+  peers.json: |
+{{ required "'peers' must be specified" .Values.peers | indent 4 }}

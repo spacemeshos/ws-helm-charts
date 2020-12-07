@@ -14,7 +14,10 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-configFile: ""
+config: ""
+peers: ""
+# TODO should be removed if it becomes possible to use --peers-file
+netID: ""
 
 serviceAccount:
   # Specifies whether a service account should be created
