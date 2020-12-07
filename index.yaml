@@ -3,9 +3,9 @@ entries:
   spacemesh-api:
   - apiVersion: v2
     appVersion: v0.1.18
-    created: "2020-12-02T23:53:36.560701+02:00"
+    created: "2020-12-07T22:38:06.028465+02:00"
     description: Spacemesh public API service
-    digest: 15c54834361e6d0ed50ea911ea460759717c4c738f10dbeb55f85b67ed91fb6b
+    digest: 13c8379d400e9881ed6a35665e885094d2351154dc5883a3cc0d91b9ad6fa764
     home: https://spacemesh.io
     icon: https://avatars3.githubusercontent.com/u/33087498?s=200&v=4
     keywords:
@@ -17,6 +17,6 @@ entries:
     name: spacemesh-api
     type: application
     urls:
-    - https://spacemeshos.github.io/ws-helm-charts/spacemesh-api-0.1.0.tgz
-    version: 0.1.0
-generated: "2020-12-02T23:53:36.558498+02:00"
+    - spacemesh-api-0.1.4.tgz
+    version: 0.1.4
+generated: "2020-12-07T22:38:06.027607+02:00"
