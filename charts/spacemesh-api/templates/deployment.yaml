@@ -39,6 +39,9 @@ spec:
             - "--config"
             - "/etc/spacemesh/config.json"
             - "--json-server"
+            # TODO remove when v0.1.17 is deprecated
+            - "--json-port"
+            - "9093"
             - "--metrics"
           ports:
             - name: grpc
@@ -52,7 +55,7 @@ spec:
               protocol: TCP
           livenessProbe:
             tcpSocket:
-              port: 9090
+              port: 9093
             initialDelaySeconds: 45
             periodSeconds: 5
             failureThreshold: 12
