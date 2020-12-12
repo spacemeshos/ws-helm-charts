@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "explorer.fullname" . }}
+  labels:
+    {{- include "explorer.labels" . | nindent 4 }}
+data:
+  config.json: |
+{{ required "'config' must be specified" .Values.node.config | indent 4 }}
+  peers.json: |
+{{ required "'peers' must be specified" .Values.node.peers | indent 4 }}

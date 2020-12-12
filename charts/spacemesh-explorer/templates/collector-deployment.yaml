@@ -1,0 +1,87 @@
+{{- $netID := required "netID must be specified" .Values.node.netID -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "explorer.fullname" . }}-collector
+  labels:
+    {{- include "explorer.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.collector.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "explorer.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "explorer.selectorLabels" . | nindent 8 }}
+        component: collector
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "explorer.serviceAccountName" . }}
+      containers:
+        - name: collector
+          image: "{{ .Values.collector.image.repository }}:{{ .Values.imageTag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.collector.image.pullPolicy }}
+          volumeMounts:
+            - name: shared
+              mountPath: /var/run
+          resources:
+            {{- toYaml .Values.node.resources | nindent 12 }}
+
+        - name: node
+          image: "{{ .Values.node.image.repository }}:{{ .Values.node.image.tag }}"
+          imagePullPolicy: {{ .Values.node.image.pullPolicy }}
+          command: ["/bin/sh"]
+          args: ["-c", "[ -f /var/run/explorer-collector ] && /bin/go-spacemesh --config /etc/spacemesh/config.json --metrics"]
+          ports:
+            - name: grpc
+              containerPort: 9092
+              protocol: TCP
+            - name: metrics
+              containerPort: 1010
+              protocol: TCP
+          livenessProbe:
+            tcpSocket:
+              port: 9092
+          startupProbe:
+            tcpSocket:
+              port: 9092
+            failureThreshold: 120
+          volumeMounts:
+            - name: config
+              mountPath: /etc/spacemesh
+            - name: config
+              mountPath: /root/spacemesh/{{ $netID }}/p2p/peers.json
+              subPath: peers.json
+            - name: shared
+              mountPath: /var/run
+          resources:
+            {{- toYaml .Values.node.resources | nindent 12 }}
+
+        - name: mongo
+          image: "{{ .Values.mongo.image.repository }}:{{ .Values.mongo.image.tag }}"
+          imagePullPolicy: {{ .Values.mongo.image.pullPolicy }}
+          readinessProbe:
+            exec:
+              command:
+                - /usr/bin/mongo
+                - explorer
+                - --quiet
+                - --eval
+                - "assert(db.networkinfo.findOne().issynced)"
+          resources:
+            {{- toYaml .Values.mongo.resources | nindent 12 }}
+
+      volumes:
+        - name: config
+          configMap:
+            name: {{ include "explorer.fullname" . }}
+        - name: shared
+          emptyDir: {}
