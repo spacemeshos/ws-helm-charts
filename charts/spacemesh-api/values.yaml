@@ -40,7 +40,6 @@ service:
 
 ingress:
   enabled: true
-  # Base domain for ingress
   grpcDomain: ""
   jsonRpcDomain: ""
   controller: nginx

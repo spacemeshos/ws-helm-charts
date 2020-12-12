@@ -72,15 +72,11 @@ spec:
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: blacktop/httpie
-          command: ["/bin/sleep"]
-          args:
-            - "10000000"
+          command: ["/bin/sh"]
+          args: ["-c", "while sleep 100d; do :; done"]
           readinessProbe:
             exec:
-              command: ["echo", "TODO, need a node that can sync"]
-            initialDelaySeconds: 45
-            periodSeconds: 30
-            failureThreshold: 1
+              command: ["/bin/sh", "-c", "echo '' | http localhost:9093/v1/nodestatus | jq -e .synced"]
       volumes:
         - name: config
           configMap:
