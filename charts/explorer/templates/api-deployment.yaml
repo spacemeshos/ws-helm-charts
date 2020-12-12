@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "explorer.fullname" . }}-api
+  labels:
+    {{- include "explorer.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.apiServer.autoscaling.enabled }}
+  replicas: {{ .Values.apiServer.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "explorer.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "explorer.selectorLabels" . | nindent 8 }}
+        component: api
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "explorer.serviceAccountName" . }}
+      containers:
+        - name: api
+          image: "{{ .Values.apiServer.image.repository }}:{{ .Values.imageTag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.apiServer.image.pullPolicy }}
+          env:
+            - name: SPACEMESH_MONGO_URI
+              value: mongodb://{{ include "explorer.fullname" . }}-mongo
+          ports:
+            - name: api
+              containerPort: 5000
+              protocol: TCP
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
