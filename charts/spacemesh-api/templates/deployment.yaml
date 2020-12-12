@@ -53,9 +53,10 @@ spec:
           livenessProbe:
             tcpSocket:
               port: 9093
-            initialDelaySeconds: 45
-            periodSeconds: 5
-            failureThreshold: 12
+          startupProbe:
+            tcpSocket:
+              port: 9093
+            failureThreshold: 120
           volumeMounts:
             - name: config
               mountPath: /etc/spacemesh
@@ -73,7 +74,7 @@ spec:
           args: ["-c", "while sleep 100d; do :; done"]
           readinessProbe:
             exec:
-              command: ["/bin/sh", "-c", "echo '' | http localhost:9093/v1/nodestatus | jq -e .synced"]
+              command: ["/bin/sh", "-c", "echo '' | http localhost:9093/v1/node/status | jq -e .synced"]
       volumes:
         - name: config
           configMap:
