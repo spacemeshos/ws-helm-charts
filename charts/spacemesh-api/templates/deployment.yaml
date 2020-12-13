@@ -39,6 +39,9 @@ spec:
             - "--config"
             - "/etc/spacemesh/config.json"
             - "--json-server"
+            # TODO remove when v0.1.17 is deprecated
+            - "--json-port"
+            - "9093"
             - "--metrics"
           ports:
             - name: grpc
@@ -74,7 +77,7 @@ spec:
           args: ["-c", "while sleep 100d; do :; done"]
           readinessProbe:
             exec:
-              command: ["/bin/sh", "-c", "echo '' | http localhost:9093/v1/node/status | jq -e .synced"]
+              command: ["/bin/sh", "-c", "echo '' | http localhost:9093/v1/nodestatus | jq -e .synced"]
       volumes:
         - name: config
           configMap:
