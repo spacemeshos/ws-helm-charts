@@ -32,7 +32,7 @@ spec:
             - name: shared
               mountPath: /var/run
           resources:
-            {{- toYaml .Values.node.resources | nindent 12 }}
+            {{- toYaml .Values.collector.resources | nindent 12 }}
 
         - name: node
           image: "{{ .Values.node.image.repository }}:{{ .Values.node.image.tag }}"
