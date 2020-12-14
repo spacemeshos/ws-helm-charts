@@ -12,12 +12,9 @@ spec:
       {{- include "explorer.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      {{- with .Values.podAnnotations }}
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "1010"
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
       labels:
         {{- include "explorer.selectorLabels" . | nindent 8 }}
         component: collector
