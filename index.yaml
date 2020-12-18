@@ -3,9 +3,9 @@ entries:
   spacemesh-api:
   - apiVersion: v2
     appVersion: v0.1.17
-    created: "2020-12-17T19:32:06.467636+02:00"
+    created: "2020-12-18T21:44:46.485063+02:00"
     description: Spacemesh public API service
-    digest: 4f1790374ab5f433f6649973a802304aa1c7f91a13a5a17d517fb0146cefe2be
+    digest: 3f404448af7e067457486bc7e3c5bc7b87d104edf84f9fca016d7d8be19b97d5
     home: https://spacemesh.io
     icon: https://avatars3.githubusercontent.com/u/33087498?s=200&v=4
     keywords:
@@ -17,12 +17,12 @@ entries:
     name: spacemesh-api
     type: application
     urls:
-    - spacemesh-api-0.1.11.tgz
-    version: 0.1.11
+    - spacemesh-api-0.1.12.tgz
+    version: 0.1.12
   spacemesh-dash:
   - apiVersion: v2
     appVersion: v0.0.2
-    created: "2020-12-17T19:32:06.468461+02:00"
+    created: "2020-12-18T21:44:46.485669+02:00"
     description: Spacemesh Dashboard
     digest: f605801b30672e3a64c288f037f520ebf79da15ab5d038feb3de91f7b10f86f9
     home: https://dash.spacemesh.io
@@ -41,7 +41,7 @@ entries:
   spacemesh-explorer:
   - apiVersion: v2
     appVersion: v0.0.1
-    created: "2020-12-17T19:32:06.469452+02:00"
+    created: "2020-12-18T21:44:46.486449+02:00"
     description: Spacemesh Explorer
     digest: 440bec6ca7cd0d96652464dd791416bca02373a88d8c982d32e9a32915ecacaa
     home: https://explorer.spacemesh.io
@@ -57,4 +57,4 @@ entries:
     urls:
     - spacemesh-explorer-0.1.4.tgz
     version: 0.1.4
-generated: "2020-12-17T19:32:06.466153+02:00"
+generated: "2020-12-18T21:44:46.484275+02:00"
