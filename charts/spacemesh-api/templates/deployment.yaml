@@ -37,10 +37,8 @@ spec:
           args:
             - "--config"
             - "/etc/spacemesh/config.json"
-            - "--json-server"
             # TODO remove when v0.1.17 is deprecated
-            - "--json-port"
-            - "9093"
+            - "--json-server-new"
             - "--metrics"
           ports:
             - name: grpc
