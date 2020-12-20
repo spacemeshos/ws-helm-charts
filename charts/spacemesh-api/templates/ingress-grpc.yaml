@@ -18,6 +18,7 @@ metadata:
     nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
     {{- end }}
     cert-manager.io/cluster-issuer: {{ .Values.ingress.certIssuer }}
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: false
 spec:
   tls:
     - hosts:
