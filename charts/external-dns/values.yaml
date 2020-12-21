@@ -1,0 +1,4 @@
+provider: cloudflare
+cloudflare:
+  apiToken: "<CF_API_TOKEN>"
+#   secretName: external-dns-cloudflare
