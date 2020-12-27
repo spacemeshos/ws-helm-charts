@@ -6,7 +6,8 @@ metadata:
     {{- include "explorer.labels" . | nindent 4 }}
 spec:
   ports:
-    - port: 1010
+    - name: metrics
+      port: 1010
   selector:
     {{- include "explorer.selectorLabels" . | nindent 4 }}
     component: collector
