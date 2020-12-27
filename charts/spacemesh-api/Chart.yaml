@@ -1,6 +1,6 @@
 apiVersion: v2
 name: spacemesh-api
-version: 0.1.16
+version: 0.1.17
 appVersion: v0.1.17
 description: Spacemesh public API service
 home: https://spacemesh.io

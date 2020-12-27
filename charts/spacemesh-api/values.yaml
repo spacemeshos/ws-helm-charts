@@ -19,6 +19,10 @@ peers: ""
 # TODO should be removed if it becomes possible to use --peers-file
 netID: ""
 
+kubePrometheusStack:
+  release: kube-prometheus-stack
+  blackboxURL: "prometheus-blackbox-exporter:9115"
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true

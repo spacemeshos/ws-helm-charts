@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Probe
+metadata:
+  name: {{ include "spacemesh-api.fullname" . }}
+  labels:
+    release: {{ .Values.kubePrometheusStack.release }}
+spec:
+  module: http_post_2xx
+  prober:
+    url: {{ .Values.kubePrometheusStack.blackboxURL }}
+  jobName: {{ include "spacemesh-api.fullname" . }}
+  targets:
+    staticConfig:
+      static:
+        - https://{{ .Values.ingress.domain }}/v1/nodestatus
