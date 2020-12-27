@@ -3,9 +3,9 @@ entries:
   spacemesh-api:
   - apiVersion: v2
     appVersion: v0.1.17
-    created: "2020-12-27T17:29:53.902863+02:00"
+    created: "2020-12-27T23:13:24.188671+02:00"
     description: Spacemesh public API service
-    digest: 79b5b44383c72b6fa684ae5ac7a2424447a674a8fcd155cbad66f06d106ce063
+    digest: 1a5aa78b1c0b042652fc505dfe2033919182f15e342d2cfe043da5558093e02c
     home: https://spacemesh.io
     icon: https://avatars3.githubusercontent.com/u/33087498?s=200&v=4
     keywords:
@@ -17,14 +17,14 @@ entries:
     name: spacemesh-api
     type: application
     urls:
-    - spacemesh-api-0.1.16.tgz
-    version: 0.1.16
+    - spacemesh-api-0.1.17.tgz
+    version: 0.1.17
   spacemesh-dash:
   - apiVersion: v2
     appVersion: v0.0.2
-    created: "2020-12-27T17:29:53.920094+02:00"
+    created: "2020-12-27T23:13:24.191767+02:00"
     description: Spacemesh Dashboard
-    digest: f605801b30672e3a64c288f037f520ebf79da15ab5d038feb3de91f7b10f86f9
+    digest: 61407884dd7178fe5d1411443556e61d0f765aa8b558ab30d39b2e6be1530d27
     home: https://dash.spacemesh.io
     icon: https://avatars3.githubusercontent.com/u/33087498?s=200&v=4
     keywords:
@@ -36,14 +36,14 @@ entries:
     name: spacemesh-dash
     type: application
     urls:
-    - spacemesh-dash-0.1.2.tgz
-    version: 0.1.2
+    - spacemesh-dash-0.1.3.tgz
+    version: 0.1.3
   spacemesh-explorer:
   - apiVersion: v2
     appVersion: v0.0.1
-    created: "2020-12-27T17:29:53.920854+02:00"
+    created: "2020-12-27T23:13:24.19414+02:00"
     description: Spacemesh Explorer
-    digest: 96ec10997c21685bcd64994aa6288b91b7aad91416554e7e19c3ae7718719fd7
+    digest: 56f02f69158ef75a00a571a1cc83623276937dec27d830f87d31b0fc7ebb6bf0
     home: https://explorer.spacemesh.io
     icon: https://avatars3.githubusercontent.com/u/33087498?s=200&v=4
     keywords:
@@ -55,6 +55,6 @@ entries:
     name: spacemesh-explorer
     type: application
     urls:
-    - spacemesh-explorer-0.1.6.tgz
-    version: 0.1.6
-generated: "2020-12-27T17:29:53.901382+02:00"
+    - spacemesh-explorer-0.1.7.tgz
+    version: 0.1.7
+generated: "2020-12-27T23:13:24.176219+02:00"
