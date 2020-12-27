@@ -12,4 +12,4 @@ spec:
   targets:
     staticConfig:
       static:
-        - https://{{ .Values.ingress.domain }}/v1/nodestatus
+        - https://{{ .Values.ingress.jsonRpcDomain }}/v1/nodestatus
