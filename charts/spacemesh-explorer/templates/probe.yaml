@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Probe
+metadata:
+  name: {{ include "explorer.fullname" . }}
+  labels:
+    release: {{ .Values.kubePrometheusStack.release }}
+spec:
+  prober:
+    url: {{ .Values.kubePrometheusStack.blackboxURL }}
+  jobName: {{ include "explorer.fullname" . }}
+  targets:
+    staticConfig:
+      static:
+        - https://{{ .Values.apiServer.ingress.domain }}/healthz

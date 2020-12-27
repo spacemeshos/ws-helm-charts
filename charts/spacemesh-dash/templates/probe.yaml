@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Probe
+metadata:
+  name: {{ include "spacemesh-dash.fullname" . }}
+  labels:
+    release: {{ .Values.kubePrometheusStack.release }}
+spec:
+  module: websocket
+  prober:
+    url: {{ .Values.kubePrometheusStack.blackboxURL }}
+  jobName: {{ include "spacemesh-dash.fullname" . }}
+  targets:
+    staticConfig:
+      static:
+        - https://{{ .Values.ingress.domain }}/ws

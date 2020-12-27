@@ -12,6 +12,10 @@ image:
 
 mongo: "explorer-mongo"
 
+kubePrometheusStack:
+  release: kube-prometheus-stack
+  blackboxURL: "prometheus-blackbox-exporter:9115"
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
