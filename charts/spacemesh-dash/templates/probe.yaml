@@ -6,6 +6,8 @@ metadata:
     release: {{ .Values.kubePrometheusStack.release }}
 spec:
   module: websocket
+  interval: 120s
+  scrapeTimeout: 70s
   prober:
     url: {{ .Values.kubePrometheusStack.blackboxURL }}
   jobName: {{ include "spacemesh-dash.fullname" . }}
