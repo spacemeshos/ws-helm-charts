@@ -13,5 +13,7 @@ spec:
   jobName: {{ include "spacemesh-dash.fullname" . }}
   targets:
     staticConfig:
+      labels:
+        namespace: default
       static:
         - https://{{ .Values.ingress.domain }}/ws

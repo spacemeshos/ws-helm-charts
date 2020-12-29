@@ -10,5 +10,7 @@ spec:
   jobName: {{ include "explorer.fullname" . }}
   targets:
     staticConfig:
+      labels:
+        namespace: default
       static:
         - https://{{ .Values.apiServer.ingress.domain }}/healthz
