@@ -9,8 +9,8 @@ spec:
   route:
     groupBy: ['job']
     matchers:
-      name: job
-      value: {{ $name }}
+      - name: job
+        value: {{ $name }}
     receiver: {{ $name }}
   receivers:
     - name: {{ $name }}
