@@ -1,0 +1,20 @@
+{{- $name := include "spacemesh-dash.fullname" . -}}
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+metadata:
+  name: {{ $name }}
+  labels:
+    release: kube-prometheus-stack
+spec:
+  route:
+    groupBy: ['job']
+    matchers:
+      name: job
+      value: {{ $name }}
+    receiver: {{ $name }}
+  receivers:
+    - name: {{ $name }}
+      pagerdutyConfigs:
+        - serviceKey:
+            name: {{ $name }}-pagerduty
+            key: token

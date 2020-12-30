@@ -51,6 +51,8 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+pagerdutyToken: ""
+
 kubePrometheusStack:
   release: kube-prometheus-stack
   blackboxURL: "prometheus-blackbox-exporter:9115"

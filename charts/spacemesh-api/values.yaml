@@ -19,6 +19,8 @@ peers: ""
 # TODO should be removed if it becomes possible to use --peers-file
 netID: ""
 
+pagerdutyToken: ""
+
 kubePrometheusStack:
   release: kube-prometheus-stack
   blackboxURL: "prometheus-blackbox-exporter:9115"

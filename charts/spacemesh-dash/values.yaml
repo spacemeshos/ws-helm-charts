@@ -12,6 +12,8 @@ image:
 
 mongo: "explorer-mongo"
 
+pagerdutyToken: ""
+
 kubePrometheusStack:
   release: kube-prometheus-stack
   blackboxURL: "prometheus-blackbox-exporter:9115"
