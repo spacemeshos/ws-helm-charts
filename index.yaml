@@ -3,6 +3,24 @@ entries:
   spacemesh-api:
   - apiVersion: v2
     appVersion: v0.1.22
+    created: "2021-04-13T11:51:50.88083628Z"
+    description: Spacemesh public API service
+    digest: 9e67049cb5491ea00087986f3b99f1adaaf90ff1cc3f255ebae8e5728c86cee3
+    home: https://spacemesh.io
+    icon: https://avatars3.githubusercontent.com/u/33087498?s=200&v=4
+    keywords:
+    - spacemesh
+    - blockchain
+    maintainers:
+    - email: info@spacemesh.io
+      name: Spacemesh Team
+    name: spacemesh-api
+    type: application
+    urls:
+    - https://github.com/spacemeshos/ws-helm-charts/releases/download/spacemesh-api-1.0.0/spacemesh-api-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
+    appVersion: v0.1.22
     created: "2021-01-19T08:37:09.864469996Z"
     description: Spacemesh public API service
     digest: 6cf69cf18760768979ee98a6c71ce08786f2a5de2e038e4cba2b7b6c7c104804
@@ -76,6 +94,24 @@ entries:
   spacemesh-dash:
   - apiVersion: v2
     appVersion: v0.0.2
+    created: "2021-04-13T11:51:50.999274449Z"
+    description: Spacemesh Dashboard
+    digest: 46543a2db12349eee1b7d43e40b0d0082014c95bc276be21f1743aee74dd387c
+    home: https://dash.spacemesh.io
+    icon: https://avatars3.githubusercontent.com/u/33087498?s=200&v=4
+    keywords:
+    - spacemesh
+    - blockchain
+    maintainers:
+    - email: info@spacemesh.io
+      name: Spacemesh Team
+    name: spacemesh-dash
+    type: application
+    urls:
+    - https://github.com/spacemeshos/ws-helm-charts/releases/download/spacemesh-dash-1.0.0/spacemesh-dash-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
+    appVersion: v0.0.2
     created: "2021-01-02T10:22:29.417563905Z"
     description: Spacemesh Dashboard
     digest: 6b0c7e227d791f2798d21d0e15e664d6360a8098f54402a62f2875b958233d23
@@ -111,6 +147,24 @@ entries:
     - spacemesh-dash-0.1.6.tgz
     version: 0.1.6
   spacemesh-explorer:
+  - apiVersion: v2
+    appVersion: v0.0.1
+    created: "2021-04-13T11:51:51.100424625Z"
+    description: Spacemesh Explorer
+    digest: 9139023bc29011defe28e27b8841fd993cfb8c3c379e15b570ca4a3623b5d79b
+    home: https://explorer.spacemesh.io
+    icon: https://avatars3.githubusercontent.com/u/33087498?s=200&v=4
+    keywords:
+    - spacemesh
+    - blockchain
+    maintainers:
+    - email: info@spacemesh.io
+      name: Spacemesh Team
+    name: spacemesh-explorer
+    type: application
+    urls:
+    - https://github.com/spacemeshos/ws-helm-charts/releases/download/spacemesh-explorer-1.0.0/spacemesh-explorer-1.0.0.tgz
+    version: 1.0.0
   - apiVersion: v2
     appVersion: v0.0.1
     created: "2021-01-02T10:22:29.538655759Z"
