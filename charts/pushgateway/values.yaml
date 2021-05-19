@@ -1,0 +1,7 @@
+ingress:
+  enabled: true
+  path: /
+  annotations:
+  hosts:
+     - pushgateway-129.domain.com
+
