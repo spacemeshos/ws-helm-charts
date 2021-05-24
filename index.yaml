@@ -149,6 +149,24 @@ entries:
   spacemesh-explorer:
   - apiVersion: v2
     appVersion: v0.0.1
+    created: "2021-05-24T18:33:19.141449316Z"
+    description: Spacemesh Explorer
+    digest: bf4b5cfab32b00a493b92da90b163aa4a726722d3b00fb258068619f16fc37d5
+    home: https://explorer.spacemesh.io
+    icon: https://avatars3.githubusercontent.com/u/33087498?s=200&v=4
+    keywords:
+    - spacemesh
+    - blockchain
+    maintainers:
+    - email: info@spacemesh.io
+      name: Spacemesh Team
+    name: spacemesh-explorer
+    type: application
+    urls:
+    - https://github.com/spacemeshos/ws-helm-charts/releases/download/spacemesh-explorer-1.0.2/spacemesh-explorer-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
+    appVersion: v0.0.1
     created: "2021-05-06T18:22:31.277435127Z"
     description: Spacemesh Explorer
     digest: 8059f82ed6832981f6a6506c4e6bd19f2224acf9fc1eeb21c2175e95f60b31ce
