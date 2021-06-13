@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ include "promxy.fullname" . }}-miner
+  labels:
+    release: {{ $.Release.Name }} # needed by kube-prometheus-stack helm
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: miner
+  endpoints:
+    - port: metrics

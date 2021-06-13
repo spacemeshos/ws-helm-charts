@@ -1,0 +1,49 @@
+promxy:
+  prometheus:
+    kubernetes_sd_configs:
+      serviceName: prom-kps-prometheus
+
+kube-prometheus-stack:
+  # 63 chars limit for statefulset labels
+  nameOverride: kps
+
+  prometheusOperator:
+    logLevel: debug
+    namespaces:
+      releaseNamespace: true
+      additional:
+        - default
+
+  alertmanager:
+    ingress:
+      enabled: true
+      hosts:
+        - alertmanager-devnet.spacemesh.io
+
+  coreDns:
+    enabled: false
+
+  grafana:
+    ingress:
+      enabled: true
+      hosts:
+        - grafana-devnet.spacemesh.io
+
+  prometheus:
+    ingress:
+      enabled: true
+      hosts:
+        - prometheus-devnet.spacemesh.io
+    prometheusSpec:
+      shards: 3
+
+prometheus-pushgateway:
+  replicaCount: 3
+  serviceMonitor:
+    enabled: true
+  ingress:
+    enabled: true
+    path: /
+    annotations:
+    hosts:
+      - pushgateway-devnet.spacemesh.io
