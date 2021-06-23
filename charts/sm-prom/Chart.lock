@@ -1,12 +1,12 @@
 dependencies:
 - name: kube-prometheus-stack
   repository: https://prometheus-community.github.io/helm-charts
-  version: 16.7.0
+  version: 16.7.1
 - name: prometheus-pushgateway
   repository: https://prometheus-community.github.io/helm-charts
   version: 1.9.0
 - name: promxy
   repository: https://valar999.github.io/helm-charts
-  version: 0.9.1
-digest: sha256:33e56670edbed69ebdac0449955dca950b2b5484a29c447a90f6080b65b8af91
-generated: "2021-06-13T15:21:54.89866+03:00"
+  version: 0.9.2
+digest: sha256:69794d375a2e3d6e914553aeeea06f2cb5060386d3a863ae5a83dd1ecd6d38f7
+generated: "2021-06-23T14:50:36.665075+03:00"
