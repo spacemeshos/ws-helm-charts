@@ -7,6 +7,6 @@ dependencies:
   version: 1.9.0
 - name: promxy
   repository: https://valar999.github.io/helm-charts
-  version: 0.9.2
-digest: sha256:9e65f899820b22e6fc907bb4f019a0c4bfe5327005ff7b1aa74d1f07b1990604
-generated: "2021-06-24T11:14:35.488708+03:00"
+  version: 0.9.3
+digest: sha256:81ee02d51ff2793f5790ba256146daf260d9aa3a5e01e7360ace49248752fb94
+generated: "2021-06-24T11:27:35.636599+03:00"
