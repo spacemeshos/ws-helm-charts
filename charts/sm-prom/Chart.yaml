@@ -1,6 +1,6 @@
 apiVersion: v2
 name: sm-prom
-version: 0.9.4
+version: 1.0.0
 appVersion: v16.1.2
 description: kube-prometheus-stack adopted for Spacemesh
 home: https://spacemesh.io
