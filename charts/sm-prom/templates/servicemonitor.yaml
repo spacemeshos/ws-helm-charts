@@ -11,3 +11,7 @@ spec:
       app: miner
   endpoints:
     - port: metrics
+      relabelings:
+        - sourceLabels: [service]
+          targetLabel: miner
+          regex: (.*)-metric
