@@ -17,7 +17,7 @@ dependencies:
   version: ~16.7.0
   repository: https://prometheus-community.github.io/helm-charts
 - name: prometheus-pushgateway
-  version: ~1.9.0
+  version: ~1.10.0
   repository: https://prometheus-community.github.io/helm-charts
 - name: promxy
   version: ~0.9.3

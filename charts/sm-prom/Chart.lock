@@ -4,9 +4,9 @@ dependencies:
   version: 16.7.1
 - name: prometheus-pushgateway
   repository: https://prometheus-community.github.io/helm-charts
-  version: 1.9.0
+  version: 1.10.1
 - name: promxy
   repository: https://valar999.github.io/helm-charts
   version: 0.9.3
-digest: sha256:81ee02d51ff2793f5790ba256146daf260d9aa3a5e01e7360ace49248752fb94
-generated: "2021-06-24T11:27:35.636599+03:00"
+digest: sha256:4ca07deb022ce4ca268654b448b7e0c819ede565d793b8238d10547b44cdc4fd
+generated: "2021-07-07T23:49:45.601662+03:00"
