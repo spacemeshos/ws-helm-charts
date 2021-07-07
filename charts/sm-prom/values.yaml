@@ -24,6 +24,10 @@ kube-prometheus-stack:
     enabled: false
 
   grafana:
+    sidecar:
+      datasources:
+        # set it, if release name has another name, not "prom"
+        url: http://prom-promxy:9090/
     ingress:
       enabled: true
       hosts:
