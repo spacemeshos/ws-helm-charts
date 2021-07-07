@@ -3,6 +3,34 @@ entries:
   sm-prom:
   - apiVersion: v2
     appVersion: v16.1.2
+    created: "2021-07-07T22:30:59.038003125Z"
+    dependencies:
+    - name: kube-prometheus-stack
+      repository: https://prometheus-community.github.io/helm-charts
+      version: ~16.7.0
+    - name: prometheus-pushgateway
+      repository: https://prometheus-community.github.io/helm-charts
+      version: ~1.10.0
+    - name: promxy
+      repository: https://valar999.github.io/helm-charts
+      version: ~0.9.3
+    description: kube-prometheus-stack adopted for Spacemesh
+    digest: bdc755242cbcf8135a672a1d0f09a5187016a29a6bb3496d4331a91910be71f3
+    home: https://spacemesh.io
+    icon: https://avatars3.githubusercontent.com/u/33087498?s=200&v=4
+    keywords:
+    - spacemesh
+    - blockchain
+    maintainers:
+    - email: info@spacemesh.io
+      name: Spacemesh Team
+    name: sm-prom
+    type: application
+    urls:
+    - https://github.com/spacemeshos/ws-helm-charts/releases/download/sm-prom-1.0.0/sm-prom-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
+    appVersion: v16.1.2
     created: "2021-06-24T08:29:01.105788438Z"
     dependencies:
     - name: kube-prometheus-stack
