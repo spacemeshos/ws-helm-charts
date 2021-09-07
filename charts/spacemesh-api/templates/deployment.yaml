@@ -37,7 +37,7 @@ spec:
           args:
             - "--config"
             - "/etc/spacemesh/config.json"
-            - "--json-server-new"
+            - "--json-server"
             - "--metrics"
           ports:
             - name: grpc
