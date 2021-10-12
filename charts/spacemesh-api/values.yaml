@@ -15,9 +15,6 @@ nameOverride: ""
 fullnameOverride: ""
 
 config: ""
-peers: ""
-# TODO should be removed if it becomes possible to use --peers-file
-netID: ""
 
 pagerdutyToken: ""
 

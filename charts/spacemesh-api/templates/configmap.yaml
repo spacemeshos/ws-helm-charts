@@ -7,5 +7,3 @@ metadata:
 data:
   config.json: |
 {{ required "'config' must be specified" .Values.config | indent 4 }}
-  peers.json: |
-{{ required "'peers' must be specified" .Values.peers | indent 4 }}

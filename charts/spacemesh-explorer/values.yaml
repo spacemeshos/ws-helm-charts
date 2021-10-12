@@ -35,9 +35,7 @@ node:
     repository: spacemeshos/go-spacemesh
     pullPolicy: IfNotPresent
     tag: ""
-  netID: ""
   config: ""
-  peers: ""
   resources: {}
 
 mongo:

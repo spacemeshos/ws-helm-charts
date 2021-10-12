@@ -1,4 +1,3 @@
-{{- $netID := required "netID must be specified" .Values.netID -}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -59,9 +58,6 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /etc/spacemesh
-            - name: config
-              mountPath: /root/spacemesh/{{ $netID }}/p2p/peers.json
-              subPath: peers.json
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
 
