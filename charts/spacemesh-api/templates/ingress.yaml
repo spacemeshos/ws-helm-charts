@@ -13,8 +13,7 @@ metadata:
     {{- include "spacemesh-api.labels" . | nindent 4 }}
   annotations:
     kubernetes.io/ingress.class: {{ .Values.ingress.controller }}
-    cert-manager.io/cluster-issuer: {{ .Values.ingress.certIssuer }}
-    external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
 spec:
   tls:
     - hosts:

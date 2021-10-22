@@ -44,7 +44,6 @@ ingress:
   grpcDomain: ""
   jsonRpcDomain: ""
   controller: nginx
-  certIssuer: letsencrypt
 
 resources: {}
 

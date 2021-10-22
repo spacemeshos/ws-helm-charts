@@ -14,11 +14,9 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: {{ .Values.ingress.controller }}
     {{- if eq .Values.ingress.controller "nginx" }}
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
     {{- end }}
-    cert-manager.io/cluster-issuer: {{ .Values.ingress.certIssuer }}
-    external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
 spec:
   tls:
     - hosts:
