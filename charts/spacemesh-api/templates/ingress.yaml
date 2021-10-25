@@ -13,7 +13,7 @@ metadata:
     {{- include "spacemesh-api.labels" . | nindent 4 }}
   annotations:
     kubernetes.io/ingress.class: {{ .Values.ingress.controller }}
-    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
 spec:
   tls:
     - hosts:
