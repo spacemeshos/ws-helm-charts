@@ -22,7 +22,7 @@ spec:
   tls:
     - hosts:
         - {{ $domain }}
-      secretName: {{ $fullName }}-grpc
+      secretName: tls
   rules:
     - host: {{ $domain }}
       http:
