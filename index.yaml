@@ -144,6 +144,24 @@ entries:
   spacemesh-api:
   - apiVersion: v2
     appVersion: v0.1.22
+    created: "2021-10-25T13:18:11.631474161Z"
+    description: Spacemesh public API service
+    digest: eb74d043ef75a2b9764539d57e65f4f10bc2b283a7fa123369fe00b8ca8a4c42
+    home: https://spacemesh.io
+    icon: https://avatars3.githubusercontent.com/u/33087498?s=200&v=4
+    keywords:
+    - spacemesh
+    - blockchain
+    maintainers:
+    - email: info@spacemesh.io
+      name: Spacemesh Team
+    name: spacemesh-api
+    type: application
+    urls:
+    - https://github.com/spacemeshos/ws-helm-charts/releases/download/spacemesh-api-1.0.7/spacemesh-api-1.0.7.tgz
+    version: 1.0.7
+  - apiVersion: v2
+    appVersion: v0.1.22
     created: "2021-10-25T12:00:48.680741707Z"
     description: Spacemesh public API service
     digest: 96ff266f8477861c35005aabc0f722a085df415c9d9894c683b1b7552872cd95
