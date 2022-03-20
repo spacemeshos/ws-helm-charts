@@ -38,6 +38,7 @@ spec:
             - "/etc/spacemesh/config.json"
             - "--json-server"
             - "--metrics"
+            - "--log-encoder=json"
           ports:
             - name: grpc
               containerPort: 9092

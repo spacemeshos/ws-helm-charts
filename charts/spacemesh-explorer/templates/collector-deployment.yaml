@@ -38,7 +38,7 @@ spec:
           image: "{{ .Values.node.image.repository }}:{{ .Values.node.image.tag }}"
           imagePullPolicy: {{ .Values.node.image.pullPolicy }}
           command: ["/bin/sh"]
-          args: ["-c", "[ -f /var/run/explorer-collector ] && /bin/go-spacemesh --config /etc/spacemesh/config.json --metrics"]
+          args: ["-c", "[ -f /var/run/explorer-collector ] && /bin/go-spacemesh --config /etc/spacemesh/config.json --metrics --log-encoder=json"]
           ports:
             - name: grpc
               containerPort: 9092
