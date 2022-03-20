@@ -18,6 +18,10 @@ metadata:
     nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
     {{- end }}
     external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+    nginx.ingress.kubernetes.io/server-snippet: |
+      grpc_read_timeout 600s;
+      grpc_send_timeout 600s;
+      client_body_timeout 600s;
 spec:
   tls:
     - hosts:
